@@ -1,0 +1,37 @@
+ABOUT THE PROJECTS
+We have implemented a simple machine learning algorithm where a simple linear model is trained using gradient descent to fit a given data set.
+
+
+
+KEY COMPONENTS
+Training Data: 
+The train array consists of pairs of values. These pairs represent (x, y) points on a graph where x is the input and y is the output.
+The values provided ({0,0}, {1,2}, {2,4}, {3,6}, {4,8}) suggest a relationship where the output y is twice the input x (i.e., y = 2x).
+
+
+
+Model:
+The model is a simple linear equation y = param * x. Here, param is a parameter that the algorithm will adjust to best fit the training data.
+
+
+
+Cost Function:
+The cost_function computes how well the model is performing by measuring the difference (error) between the predicted outputs of the model 
+and the actual outputs from the training data.
+
+For each training point, it calculates (predicted y - actual y)^2, which is the squared error for each point. Squaring the error makes it
+positive and emphasizes larger errors more than smaller ones.
+
+The function returns the average of these squared errors across all training points, which gives a single value representing the overall 
+performance of the model. The lower the value, the better the model fits the data.
+
+
+Gradient Descent: 
+The loop in the main function uses gradient descent to adjust the param to minimize the cost function. 
+Gradient descent is an optimization algorithm used to find the minimum of a function.
+
+It calculates the derivative of the cost function (how much the cost function changes if you change param slightly). 
+This derivative tells which direction to adjust param to reduce the cost.
+
+param is then updated by subtracting a small fraction (learning_rate) of this derivative. This process is repeated multiple times (20 iterations in your code).
+The epslum variable is a tiny number used to compute the numerical derivative by slightly perturbing the parameter.
